@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zespół Projektowy</title>
+    <style>
+        /* Ogólne stylizacje */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Stylizacja nagłówka */
+        header {
+            background: linear-gradient(135deg, #332f2f 0%, #d2cbcb 100%);
+            color: #d1c6c2;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Sekcja zespołu */
+        .team-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Stylizacja nakładki rozmazującej */
+        .blur-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            z-index: 1;
+            display: none;
+        }
+
+        /* Wyeksponowany lider zespołu */
+        .team-leader {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            width: 300px;
+            position: relative;
+            top: -20px;
+            z-index: 2;
+        }
+
+        .team-leader img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        /* Stylizacja siatki członków zespołu */
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Stylizacja kart członków zespołu */
+        .team-member {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            transition: transform 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        /* Stylizacja nagłówków i tekstu */
+        h1, h2 {
+            color: #333;
+        }
+
+        .team-member h3, .team-leader h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .team-member p, .team-leader p {
+            color: #666;
+        }
+
+        /* Rozmycie tła przy najechaniu na członka zespołu */
+        .team-member:hover ~ .blur-overlay {
+            display: block;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+            z-index: 3;
+        }
+
+        /* Stylizacja stopki */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            margin-top: 40px;
+            z-index: 1;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sekcja nagłówka -->
+    <header>
+        <h1>Nasz zespół</h1>
+        <p>Zespół Szkół nr 5 im. Karola Brzostowskiego</p>
+    </header>
+
+    <!-- Sekcja zespołu -->
+    <section class="team-section">
+        <h2>Nasz Zespół</h2>
+
+        <!-- Nakładka rozmywająca -->
+        <div class="blur-overlay"></div>
+        
+        <!-- Lider -->
+        <div class="team-leader">
+            <h3>Maciej Bołtryk</h3>
+	<p> Lider Zespołu </p>
+        </div>
+
+        <!-- Siatka członków zespołu -->
+        <div class="team-grid">
+            <div class="team-member">
+                <h3>Bartłomiej Godlewski</h3>
+                <p>Dyrektor projektu</p>
+            </div>
+
+            <div class="team-member">
+                <h3>Borys Szorc</h3>
+                <p>Sponsor</p>
+            </div>
+
+            <div class="team-member">
+                <h3>Simone Budnik</h3>
+                <p>Sponsor</p>
+            </div>
+
+            <div class="team-member">
+                <h3>Artur Słowikowski</h3>
+                <p>Menedżer projektu</p>
+            </div>
+
+            <div class="team-member">
+                <h3>Filip Banach</h3>
+                <p>Menedżer projektu</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sekcja stopki -->
+    <footer>
+        <p>Dobra praca na 6 to jest</p>
+    </footer>
+
+</body>
+</html>
