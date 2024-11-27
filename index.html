@@ -1,197 +1,223 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zespół Projektowy</title>
-    <style>
-        /* Ogólne stylizacje */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000000;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Stylizacja nagłówka */
-        header {
-            background: linear-gradient(135deg, #332f2f 0%, #d2cbcb 100%);
-            color: #d1c6c2;
-            padding: 20px;
-            width: 100%;
-            text-align: center;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            z-index: 1;
-            position: relative;
-        }
-
-        /* Sekcja zespołu */
-        .team-section {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        /* Stylizacja nakładki rozmazującej */
-        .blur-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            backdrop-filter: blur(10px);
-            z-index: 1;
-            display: none;
-        }
-
-        /* Wyeksponowany lider zespołu */
-        .team-leader {
-            background-color: #ffffff;
-            padding: 20px;
-            margin: 20px auto;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            width: 300px;
-            position: relative;
-            top: -20px;
-            z-index: 2;
-        }
-
-        .team-leader img {
-            width: 100px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        /* Stylizacja siatki członków zespołu */
-        .team-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        /* Stylizacja kart członków zespołu */
-        .team-member {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            width: 220px;
-            transition: transform 0.3s;
-            position: relative;
-            z-index: 2;
-        }
-
-        .team-member img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        /* Stylizacja nagłówków i tekstu */
-        h1, h2 {
-            color: #333;
-        }
-
-        .team-member h3, .team-leader h3 {
-            margin: 10px 0;
-            color: #333;
-        }
-
-        .team-member p, .team-leader p {
-            color: #666;
-        }
-
-        /* Rozmycie tła przy najechaniu na członka zespołu */
-        .team-member:hover ~ .blur-overlay {
-            display: block;
-        }
-
-        .team-member:hover {
-            transform: scale(1.05);
-            z-index: 3;
-        }
-
-        /* Stylizacja stopki */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            width: 100%;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            margin-top: 40px;
-            z-index: 1;
-            position: relative;
-        }
-    </style>
+    <title>CobMC.PL</title>
+    <link rel="icon" type="image/png" href="media/favicon.png">
+    <link rel="stylesheet" href="media/style.css">
+    <link href="https://fonts.bunny.net/css?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
-    <!-- Sekcja nagłówka -->
-    <header>
-        <h1>Nasz zespół</h1>
-        <p>Zespół Szkół nr 5 im. Karola Brzostowskiego</p>
-    </header>
-
-    <!-- Sekcja zespołu -->
-    <section class="team-section">
-        <h2>Nasz Zespół</h2>
-
-        <!-- Nakładka rozmywająca -->
-        <div class="blur-overlay"></div>
-        
-        <!-- Lider -->
-        <div class="team-leader">
-            <h3>Maciej Bołtryk</h3>
-	<p> Lider Zespołu </p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <nav class="desktop_navbar">
+      <a href="#"><img class="desktop_navbar_logo_img" src="media/logo_small.png" alt="logo"></a>
+      <a href="https://docs.google.com/document/d/1txAlyPHyDpryxftyyyKeBtQndukGeWedP827t6RV6Q0/edit?usp=sharing" class="desktop_navbar_link">Regualmin</a>
+      <a href="#discord" class="desktop_navbar_link scroll">Społeczność</a>
+      <a href="#about" class="desktop_navbar_link scroll">O nas</a>
+      <div class="desktop_navbar_link2_div">
+          <a href="#join" class="desktop_navbar_link2 scroll">Dołacz do nas!</a>
+      </div>
+    </nav>
+    <div class="mobile_navbar">
+      <a href="#" class="mobile_navbar_logo_img_a"><img class="mobile_navbar_logo_img" src="media/logo_small.png" alt="logo"></a>
+      <div id="mobile_navbar_links">
+          <a class="mobile_navbar_link" onclick="mobile_navbar_link_hider()" href="https://docs.google.com/document/d/1txAlyPHyDpryxftyyyKeBtQndukGeWedP827t6RV6Q0/edit?usp=sharing">Wiki</a>
+          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#discord">Community</a>
+          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#about">About Us</a>
+          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#join">Join Us</a>
         </div>
-
-        <!-- Siatka członków zespołu -->
-        <div class="team-grid">
-            <div class="team-member">
-                <h3>Bartłomiej Godlewski</h3>
-                <p>Dyrektor projektu</p>
-            </div>
-
-            <div class="team-member">
-                <h3>Borys Szorc</h3>
-                <p>Sponsor</p>
-            </div>
-
-            <div class="team-member">
-                <h3>Simone Budnik</h3>
-                <p>Sponsor</p>
-            </div>
-
-            <div class="team-member">
-                <h3>Artur Słowikowski</h3>
-                <p>Developer Strony internetowej ( no prawie )</p>
-            </div>
-
-            <div class="team-member">
-                <h3>Filip Banach</h3>
-                <p>Menedżer projektu</p>
-            </div>
-
+        <div class="icon" onclick="mobile_navbar_link_hider()">
+            <i class="fa fa-bars"></i>
         </div>
-    </section>
-
-    <!-- Sekcja stopki -->
-    <footer>
-        <p>Dobra praca na 6 to jest</p>
+        <script>
+            function mobile_navbar_link_hider() {
+            var x = document.getElementById("mobile_navbar_links");
+            if (x.style.display === "flex") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "flex";
+            }
+            } 
+        </script>
+    </div>
+    <div class="mainflex">
+      <div class="main1">
+        <a class="main1_logo_a" href="#">
+          <img class="main1_logo" src="media/logo.png" alt="logo">
+        </a>
+        <div class="main1_description">Twoje gamingowe królestwo
+        </div>
+        <div class="main1_ipcopier_div">
+          <button class="main1_ipcopier" onclick="copyText()" type="button">
+            <span class="main1_ipcopier_text1">CobMC.PL</span>
+            <br>
+            <span class="main1_ipcopier_text2">Kliknij aby skopiować IP</span>
+          </button>
+          <script>
+            function copyText() {
+                navigator.clipboard.writeText
+            ("Cobmc.pl");
+                }
+            $(document).ready(function() {
+            $('.main1_ipcopier').click(function() {
+                var popup = $('<div>', { class: 'main1_popup' })
+                .append($('<h3 class="copy_confirm">').text('IP serwera zostało skopiowane!'))
+                $(this).after(popup);
+                setTimeout(function() {
+                popup.remove();
+                }, 1000);
+            });
+            });
+        </script>
+        </div>
+        <a href="#more" class="scroll">
+          <img alt="downarrow" class="main1_downarrow" src="media/downarrow.png">
+        </a>
+        <script>
+          const scrollLinks = document.querySelectorAll('.scroll');
+          scrollLinks.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+              event.preventDefault();
+              const target = document.querySelector(link.getAttribute('href'));
+              const offsetTop = target.offsetTop;
+              window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+              });
+            });
+          });
+        </script>
+      </div>
+      <div id="more"></div>
+      <div class="main2">
+        <a class="headline">Rangi</a>
+        <div class="main2_features_div">
+          <div class="main2_feature">
+            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
+            <a class="main2_feature_headline">VIP</a>
+            <a class="main2_feature_text">10ZŁ</a>
+          </div>
+          <div class="main2_feature">
+            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
+            <a class="main2_feature_headline">SVIP</a>
+            <a class="main2_feature_text">15ZŁ</a>
+          </div>
+          <div class="main2_feature">
+            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
+            <a class="main2_feature_headline">MVIP</a>
+            <a class="main2_feature_text">20ZŁ</a>
+          </div>
+          <div class="main2_feature">
+            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
+            <a class="main2_feature_headline">ELITA</a>
+            <a class="main2_feature_text">30ZŁ</a>
+          </div>
+          <div class="main2_feature">
+            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
+            <a class="main2_feature_headline">PAJĄK</a>
+            <a class="main2_feature_text">50ZŁ</a>
+          </div>
+        </div>
+      </div>
+      <div id="discord"></div>
+      <div class="main4">
+        <a class="headline">Dołącz na nasz DISCORD</a>
+        <div class="main4_dc_div">
+          <iframe class="main4_dc_widget" src="media/discord.png" width="240" height="500" title="discord" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+          <div class="main4_dc_description_div">
+            <a class="main4_dc_description_title">Dołącz do nas</a>
+            <a class="main4_dc_description"> ・Zadaj pytanie do administracji <br> ・ Dowiaduj się o nowościach <br> ・Pisz z innymi graczami  <br><br> i wiele więcej </a>
+            <a href="https://discord.gg/B9fDdHXRJj" class="main4_dc_button_a">
+              <div class="main4_dc_button">Dołącz już teraz</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="about"></div>
+      <div class="main5">
+        <a class="headline">Kto z nami pracuje?</a>
+        <div class="main5_admin_div">
+          <div class="main5_admins_div main5_admins_dev_type2">
+            <img class="main5_admins_img" alt="admin member img" src="media/member_placeholder.webp">
+            <div class="main5_admins_description_div">
+              <a class="main5_admins_description_rank main5_admins_description_rank_owner">[Owner]</a>
+              <a class="main5_admins_description_title" href="https://example.com">13Flyx</a>
+              <a class="main5_admins_description">Szef jakich mało</a>
+            </div>
+          </div>
+          <div class="main5_admins_div main5_admins_dev_type1">
+            <img class="main5_admins_img" alt="admin member img" src="media/member_placeholder.webp">
+            <div class="main5_admins_description_div">
+              <a class="main5_admins_description_rank main5_admins_description_rank_admin">[Admin]</a>
+              <a class="main5_admins_description_title" href="https://example.com">???</a>
+              <a class="main5_admins_description">Niedłguo ktoś<br>tu będzie</a>
+            </div>
+          </div>
+        </div>
+        <div class="main5_supporter_div">
+          <div class="main5_supporters_div">
+            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
+            <div class="main5_supporters_description_div">
+              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Support]</a>
+              <a class="main5_supporters_description_title">???</a>
+              <a class="main5_supporters_description">Niedługo ktoś<br>tu będzie</a>
+            </div>
+          </div>
+          <div class="main5_supporters_div">
+            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
+            <div class="main5_supporters_description_div">
+              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Support]</a>
+              <a class="main5_supporters_description_title">???</a>
+              <a class="main5_supporters_description">Niedługo ktoś<br>Tu będzie</a>
+            </div>
+          </div>
+          <div class="main5_supporters_div">
+            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
+            <div class="main5_supporters_description_div">
+              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[T-Support]</a>
+              <a class="main5_supporters_description_title">???</a>
+              <a class="main5_supporters_description">Niedługo ktoś<br>tu będzie</a>
+            </div>
+          </div>
+          <div class="main5_supporters_div">
+            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
+            <div class="main5_supporters_description_div">
+              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[T-Support]</a>
+              <a class="main5_supporters_description_title">???</a>
+              <a class="main5_supporters_description">Niedługo<br>tu będzie</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="join"></div>
+      <div class="main3">
+        <a class="headline">Jak dołączyć na serwer</a>
+        <div class="main3_join_div_div">
+          <div class="main3_join_div">
+            <a class="main3_join_title">Java</a>
+            <div class="main3_join_content_div">
+              <div class="main3_join_categories">
+                <a>IP:</a>
+                <a>Wersja:</a>
+                <a>Discord:</a>
+              </div>
+              <div class="main3_join_values">
+                <a>CobMC.PL</a>
+                <a>1.21</a>
+		<a>gg/B9fDdHXRJj</a>
+              </div>
+            </div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="copyright_div">
+      <class="copyright">Strona zasilana przez CobMC.PL 2024</a>
     </footer>
-
-</body>
+  </body>
 </html>
