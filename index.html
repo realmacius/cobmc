@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CobMC.PL</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      overflow: hidden;
+      background: linear-gradient(-45deg, #2672ff, #6897e7, #004cd8, #ffffff);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 10rem;
+      margin-bottom: 1rem;
+    color: aqua;
+    }
+
+    #countdown {
+      font-size: 5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .discord-button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: white;
+      background-color: #5865F2;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .discord-button:hover {
+      background-color: #4752C4;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CobMC.PL</h1>
+  <h2>13.06.2025 20:00</h2>
+  <div id="countdown">Soon</div>
+  <a href="https://discord.gg/WG36TZETC6" class="discord-button" target="_blank">Dołącz na Discorda</a>
+
+  <script>
+    const countdownEl = document.getElementById("countdown");
+    const targetDate = new Date("2025-06-13T20:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const timeLeft = targetDate - now;
+
+      if (timeLeft <= 0) {
+        countdownEl.textContent = "To już teraz!";
+        return;
+      }
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+      const seconds = Math.floor((timeLeft / 1000) % 60);
+
+      countdownEl.textContent = 
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
