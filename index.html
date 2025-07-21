@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domena na sprzedaż</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .background {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ac29a, #bdc3c7);
+      background-size: 800% 800%;
+      animation: gradient 20s ease infinite;
+      z-index: -1;
+      top: -50%;
+      left: -50%;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .content {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
+
+    p {
+      font-size: 1.5rem;
+      background: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="content">
+    <h1>Domena na sprzedaż</h1>
+    <p>Kontakt: Big_maciej na Discordzie</p>
+  </div>
+</body>
+</html>
